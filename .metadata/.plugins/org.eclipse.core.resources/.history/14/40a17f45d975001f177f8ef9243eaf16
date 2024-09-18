@@ -1,0 +1,17 @@
+class Animal {
+	String animal = "Tiger";
+	void eat() {
+		System.out.println("Tiger is eating meat");
+	}
+}
+
+public class AnimalMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Animal tiger = new Animal();
+		tiger.eat();
+
+	}
+
+}

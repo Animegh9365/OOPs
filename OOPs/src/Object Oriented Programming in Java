@@ -1,0 +1,39 @@
+Introduction to OOPS
+
+Object-Oriented Programming can be defined as an approach to solve real world problems. Lets say a decade ago
+It was very hard to order food from restaurants. This was a genuine problem back then. But now a days we have
+applications like zomato, swiggy etc. Which made ordering food easy and we can get it in our door steps.
+
+OOPs allows us to model and represent these problems in a structured and organized manner, making it easier to 
+create efficient and effective solutions.
+
+How do we create objects in java?
+
+To create objects in java we use classes. Classes acts as a blueprint to an objects. It has properties of the 
+object as well as behaviour's to what the object should do.
+
+Example: Let's create a class
+
+	class Animal {
+		String name = "Tiger";
+		void eat() {
+			System.out.println("Tiger is eating");
+		}
+	}
+	
+	In java we can create an object in the main method as well as inside the classes which we will see later
+	First of all lets see how we can create an object in the main method.
+	
+	
+	
+	class Main {
+		public static void main(String[] args) {
+			
+			Animal animal = new Animal();  // This statement will create an object of the animal class
+			animal.eat();		// This statement will call the eat behaviour or method of the animal
+		}
+	}
+	
+	
+	
+		
