@@ -1,0 +1,60 @@
+What is Inheritance in Object Oriented programming?
+
+Inheritance is the ability of an object that has the capability to Inherit properties and behaviour's from 
+one class to another class. In java the class that acquires the properties and behaviour's of another class
+is called a sub-class or child class. And the class from which the properties and behaviour's are acquired
+is called a super class or parent class.
+
+Example: class Animal {
+	String name;
+	void eat(){
+		System.out.println("Animal is Eating");
+	}
+}
+
+class Tiger extends Animal {
+	String name;
+	void eat(){
+		System.out.println("Tiger is eating");
+	}
+}
+
+This is how we inherit the properties of and behaviour's from a class i.e we use extends keyword followed 
+by the super class.
+
+Types of Inheritance:
+
+1. Single Inheritance: In this types of inheritance there will always be only one parent class or super class
+and exactly one sub class or child class.
+
+2. Multi-level Inheritance: In this type of inheritance there will be be one parent class, a child class 
+inheriting the properties and behaviour's of the parent class and at the same time this child class will act
+as a parent class for another child class.
+
+3. Hierarchical Inheritance: In this type of inheritance there will be one parent class and multiple child 
+classes that inherits the same parent class.
+
+4. Hybrid Inheritance: In this type of inheritance there will be a mix of two or more type of inheritance
+(single, multi-level or hierarchical).
+
+
+
+Generally these are the main types of inheritance that is used . There are other types also like multiple 
+inheritance and  cyclical inheritance.
+
+What is multiple Inheritance? ->> When there are multiple parent class and a single child class inherits
+the properties and behaviours from multiple parent class it is termed as multiple inhertance.
+
+Multiple inheritance is not possible to acquire in java using classes.
+	It is so because every class that we code has a built in class in java that is Object.class library. And 
+	every time we create a class it will automatically become a subclass of the built-in class. It creates 
+	a shape like diamond. So multiple inheritance is not possible because of the diamond problem.
+	
+					A
+				   / \
+				  B   C
+				   \ /
+				    D
+	B and C are parent classes that inherits from the built-in class Objects.class
+	D is the subclass that is inheriting from B and C
+	Which is not allowed in java using classes.
