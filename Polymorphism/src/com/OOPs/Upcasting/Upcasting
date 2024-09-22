@@ -1,0 +1,10 @@
+What is Up-casting in Java?
+
+-> Upcasting can be considered as a programming scenario where the reference of a Parent class
+can hold the object of the child class. A subclass object is treated as an instance of its 
+superclass
+
+Think of it as a large box can contain small box inside it.
+
+We can achieve Upcasting it as the format
+Parent reference-variable = new Child();

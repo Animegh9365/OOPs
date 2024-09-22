@@ -1,0 +1,62 @@
+What is polymorphism ?
+-> Polymorphism is the ability of an entity to take multiple forms. In Java terms when creating 
+a method or an object we can create multiple methods or objects that has the same name. 
+
+But there's a catch in methods every method(having same name) should have different parameters, 
+the order of the parameters should be different, the number of parameters should be different.
+
+In object creation we can have the reference variable name same but while assigning an object we
+can have different objects who share the same reference variable. Ofcourse the type of the 
+reference variable should be a parent type i.e Upcasting should happen.
+
+Example 1 : Lets say in a class there are multiple methods like
+
+class Example {
+	void show() {
+	System.out.println("First show");
+	}
+	
+	void show(String name){
+	System.out.println("Second show");
+	}
+	
+	void show(String name, int age) {
+	System.out.println("Third show");
+	{
+	
+	void show(int age, String name) {
+	System.out.println("Fourth show");
+	}
+}
+
+We can call each show() in the main method as the parameters are different, order of parameter is 
+different, and number of parameters is different.
+
+Example 2: Let's say there are multiple classes each inheriting the parent class
+
+class Example {
+	void show() {
+	System.out.println("Parent show");
+	}
+}
+class FirstChildExample extends Example {
+	void show() {
+	System.out.println(" First Child show");
+	}
+}
+
+class SecondChildShow extends Example {
+	void show() {
+	System.out.println("Second Child show");
+	}
+}
+
+public class Main {
+	public static void main(String[] args) {
+		Example example;
+		example = new FirstChildShow();
+		example.show();
+		example = new SecondChildShow();
+		example.show();
+		 
+ 
