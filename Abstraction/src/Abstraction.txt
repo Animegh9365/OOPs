@@ -1,0 +1,75 @@
+Abstraction:
+
+Abstraction is simply about hiding details. 
+
+General Scenario: 
+	Let's take an example of "mango", when I say mango a picture of mango comes to our mind
+	similarly when I say "apple" , apple comes to my mind. 
+	
+	Now lets say "FRUIT", do we picture any thing, or an objects comes to our mind? No,
+	so it is a concept only, not a real object.
+	
+Actual Secenario: 
+	Now in Java we know that we create virtual objects to solve real world problems. Objects are
+	meant to be programming representations of real world objects, So wouldn't it be silly to create
+	objects of concepts? So how do we stop creating these objects? Thats where the concept of 
+	abstraction comes into place.
+	
+
+Abstract Classes: Serve as blueprints
+	
+In java to stop creating objects of non-objects we use abstract classes. In this we create a class
+with the keyword "abstract".
+Whenever we create abstract classes we must have atleast one method as abstract method.
+
+
+Abstract Methods:
+
+Now abstract methods are those methods whose body is not given. To simplify it, In an object we know
+that the object performs a behaviour. So the object does certain behaviour's to achieve something.
+In abstract methods we know that the method will be used, but how the method or the behaviour should
+be used is determined by the subclass that it is inheriting.
+
+Example: 
+
+//Creation of  abstract class
+abstract class Animal {
+	// abstract method creation
+	public abstract void sound();
+	
+	// concrete method creation
+	public void sleep() {
+		System.out.println("Animal is sleeping");
+	}
+}
+
+// Implementing the abstract class
+
+class Dog extends Animal {
+	// implementing sound method of Animal Class
+	public void sound() {
+		System.out.println("Dog is barking");
+	}
+}
+
+public class Main{
+
+	public static void main(String [] args) {
+		Dog dog = new Dog();
+		dog.sound();
+		dog.sleep();
+	}
+}
+
+This is how we implement abstract classes. Notice that we haven't created an object of parent class,
+because we cannot create any object out of it. but we can use the parent classes methods to implement
+the sub classes behaviour's.  
+
+Conclusion
+Abstract methods in Java provide a powerful way to maintain flexibility while ensuring that crucial 
+functionalities are not overlooked. They act like the framework of a building, setting the 
+structure and ensuring stability while allowing each room to be decorated according to individual 
+taste and function. This approach not only fosters creativity but also ensures comprehensive 
+coverage of essential components, making your software robust and adaptable.
+	
+	
