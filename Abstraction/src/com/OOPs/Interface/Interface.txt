@@ -1,0 +1,99 @@
+We already know that abstract classes help us create a blueprint for other classes.
+Abstract class further helps in making the process to achieve polymorphism even more efficient.
+Still they don't help us achieve pure abstraction. 
+
+The whole point of abstraction is that the template should provide everything about what to do,
+but not how to do. But in abstration we can also have concrete methods, they might end up providing
+how to implement certain details.
+
+So, to achieve pure abstraction there is another tool in polymorphism that happens to be Interfaces.
+
+What is an Interface?
+-> Interface serves as a blueprint for classes. It outlines a set of methods that any class 
+implementing the interface must provide.  However, it specifies what actions must be performed 
+without dictating how to perform them.
+
+
+interface MusicPlayer {
+    void play();
+    void pause();
+    void next();
+    void previous();
+}
+
+Interfaces can be used to achieve multiple inheritance
+Which means a class can implement multiple interfaces 
+
+Example
+interface Drawable {
+    void draw();
+}
+
+interface Collapsible {
+    void collapse();
+}
+
+class GraphicObject implements Drawable, Collapsible {
+    public void draw() {
+        System.out.println("Drawing object.");
+    }
+    
+    public void collapse() {
+        System.out.println("Collapsing object.");
+    }
+}
+
+
+Interfaces cannot be instantiated but their references can be created
+-> Interfaces do not hold the implementation details themselves. This means we cannot create an 
+instance of an interface. However a reference varible could be created of interface type, which
+can be used to refer to objects of any class that implements the interface.
+
+Example-
+
+interface Vehicle {
+    void drive();
+}
+// implements keyword is used when an interface is inherited by a class
+class Car implements Vehicle {
+    public void drive() {
+        System.out.println("Car is driving.");
+    }
+}
+
+public class Transport {
+    public static void main(String[] args) {
+        Vehicle myVehicle = new Car();
+        myVehicle.drive();  // Outputs: Car is driving.
+    }
+} 
+
+
+A class Implements an interface but an Interface extends another interface
+-> In Java, a class uses the keyword implements the specifications of an interface. 
+This means the class agrees to perform the specific actions the interface defines. 
+On the other hand, an interface can extend another interface using the extends keyword, 
+inheriting its method declarations. 
+
+Example- 
+interface Movable {
+    void move();
+}
+
+interface Flyable extends Movable {
+    void fly();
+}
+
+class Airplane implements Flyable {
+    public void move() {
+        System.out.println("Airplane moves forward.");
+    }
+    
+    public void fly() {
+        System.out.println("Airplane flies.");
+    }
+}
+
+
+
+An Empty interface is called a marker or tagged interface
