@@ -1,0 +1,51 @@
+Variable inside an interface are not just regular variables, they are implicitly public,
+static and final.
+
+Variables are public: This means that the variables are accessible from anywhere outside the 
+interface.
+
+Variables are static: This means that the variables belongs only to the interface. No other class
+can take the variable name.
+
+Variables are final: This means that the variables cannot be changed or modified. 
+
+While declaring the variables we do not specify these specifications rather public static and final
+keywords are given in the backend.
+
+Why Use Interface Variables?
+Consistency:
+Interface variables provide a way to declare global constants that are intended to be shared across 
+multiple classes. This ensures consistency throughout your application, as the same values are 
+accessible to all classes implementing the interface.
+
+Maintainability:
+Since these constants are declared in a single place, it is easier to manage and modify your code. 
+Any change in the value of the constant will be reflected across all implementing classes, which 
+is especially useful in large applications where the same constant value is used in multiple places.
+
+Example: 
+
+interface GameConfig {
+    int MAX_SCORE = 100;  // Maximum score
+    int MIN_SCORE = 0;    // Minimum score
+    float VERSION = 1.0f; // Version of the game
+}
+
+class Player implements GameConfig {
+    void displayScore(int score) {
+        if (score >= MAX_SCORE) {
+            System.out.println("You've reached the maximum score!");
+        } else if (score <= MIN_SCORE) {
+            System.out.println("Minimum score reached.");
+        } else {
+            System.out.println("Current score: " + score);
+        }
+    }
+}
+
+public class Game {
+    public static void main(String[] args) {
+        Player player = new Player();
+        player.displayScore(GameConfig.MAX_SCORE);  // Accessing constant from the interface
+    }
+} 
