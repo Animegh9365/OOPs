@@ -1,0 +1,45 @@
+Methods in Interfaces:
+
+
+1/ Abstract Methods:
+
+Methods declared in interfaces are implicitly public and abstract.
+
+
+Abstract: Methods in interfaces are abstract because they don't have implementation body.
+Public: Methods are accessible to everywhere.
+
+Example: 
+
+interface Player {
+    void play();  //This is actually : public abstract void play();
+    void stop();  //This is actually : public abstract void stop();
+}
+
+
+2/ Default Methods (introduced in Java 8):
+	
+	Default methods allow us to define a method with a default implementation body within an 
+	interface. These methods can be modified by the implementing classes.
+	
+	Example:
+	
+	interface Player {
+    void play();
+    void stop();
+    default void pause() {
+        System.out.println("Playback paused.");
+    }
+}
+
+3/ Static Methods (introduced in Java 8):
+	
+	Static methods belongs to the interface not the instance of the class. They can be called on
+	the interface itself.
+	
+	Example: 
+	 interface Player {
+    static void reset() {
+        System.out.println("Player reset to default settings.");
+    }
+}
